@@ -1,0 +1,43 @@
+Write a C++ program using array of objects to compare SPI of 10 
+different students and print whose SPI is highest
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+public:
+    string name;
+    double spi;
+
+    void getDetails() {
+        cout << "Enter student name: ";
+        cin >> name;
+        cout << "Enter SPI: ";
+        cin >> spi;
+    }
+};
+
+int main() {
+    const int numStudents = 10;
+    Student students[numStudents];
+
+    for (int i = 0; i < numStudents; i++) {
+        cout << "Enter details for Student " << (i + 1) << ":\n";
+        students[i].getDetails();
+    }
+
+    double highestSPI = students[0].spi;
+    string highestSPIStudent = students[0].name;
+
+    for (int i = 1; i < numStudents; i++) {
+        if (students[i].spi > highestSPI) {
+            highestSPI = students[i].spi;
+            highestSPIStudent = students[i].name;
+        }
+    }
+
+    cout << "Student with the highest SPI: " << highestSPIStudent << " (SPI: " << highestSPI << ")" << endl;
+
+    return 0;
+}
