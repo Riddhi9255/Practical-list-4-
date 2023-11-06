@@ -1,0 +1,34 @@
+11.Write a C++ program to demonstrate use of Parameterized 
+Constructor.
+#include <iostream>
+
+using namespace std;
+
+class MyClass {
+private:
+    int value;
+
+public:
+    // Parameterized constructor
+    MyClass(int val) {
+        value = val; // Initialize 'value' with the provided value
+    }
+
+    void displayValue() {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main() {
+    int userValue;
+    cout << "Enter a value: ";
+    cin >> userValue;
+
+    MyClass myObject(userValue);
+
+    // Create an object using the parameterized constructor
+    // 'value' will be initialized with the user-provided value
+    myObject.displayValue();
+
+    return 0;
+}
