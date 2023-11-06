@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+class MyClass {
+public:
+    static int count; // Static data member
+
+    // Static member function to increment the count
+    static void incrementCount() {
+        count++;
+    }
+
+    void displayCount() {
+     cout << " mahemdavadi riddhi j 220130318035 ";
+        cout << "Count: " << count << endl;
+    }
+};
+
+// Initialize the static data member outside the class
+int MyClass::count = 0;
+
+int main() {
+    MyClass obj1, obj2, obj3;
+
+    // Call the static member function to increment the count
+    MyClass::incrementCount();
+
+    // Display the count using an object
+    obj1.displayCount();
+
+    // Call the static member function again
+    MyClass::incrementCount();
+
+    // Display the count using a different object
+    obj2.displayCount();
+
+    return 0;
+}
