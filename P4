@@ -1,0 +1,36 @@
+Write a C++ program to demonstrate use of passing object as an 
+argument.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+    Person(const string& n, int a) : name(n), age(a) {}
+
+    void displayInfo() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+// Function that takes a Person object as an argument and displays its information
+void displayPersonInfo(const Person& person) {
+    cout << "Received Person Object: ";
+    person.displayInfo();
+}
+
+int main() {
+    Person person1("Alice", 25);
+
+    cout << "Original Person Object: ";
+    person1.displayInfo();
+
+    // Pass the object 'person1' to the function
+    displayPersonInfo(person1);
+
+    return 0;
+}
