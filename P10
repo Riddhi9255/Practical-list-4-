@@ -1,0 +1,29 @@
+Write a C++ program to demonstrate use of Default Constructor.
+#include <iostream>
+
+using namespace std;
+
+class MyClass {
+private:
+    int value;
+
+public:
+    // Default constructor
+    MyClass() {
+        value = 0; // Initialize 'value' to a default value
+    }
+
+    void displayValue() {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main() {
+    MyClass myObject;
+
+    // Create an object using the default constructor
+    // 'value' will be initialized to 0
+    myObject.displayValue();
+
+    return 0;
+}
