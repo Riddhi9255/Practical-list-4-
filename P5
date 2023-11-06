@@ -1,0 +1,33 @@
+Write a C++ program to demonstrate use of Returning Object as 
+argument.
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+    Person(const string& n, int a) : name(n), age(a) {}
+
+    void displayInfo() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+
+    // Function to create and return a new Person object
+    static Person createPerson(const string& n, int a) {
+        return Person(n, a);
+    }
+};
+
+int main() {
+    // Call the static createPerson() function to create a new Person object
+    Person person1 = Person::createPerson("Alice", 25);
+
+    cout << "Newly Created Person Object: ";
+    person1.displayInfo();
+
+    return 0;
+}
