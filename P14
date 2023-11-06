@@ -1,0 +1,27 @@
+14.Write a C++ program to print message when object gets destroyed 
+using destructor.
+#include <iostream>
+
+using namespace std;
+
+class MessagePrinter {
+public:
+    MessagePrinter() {
+        cout << "Object created." << endl;
+    }
+
+    ~MessagePrinter() {
+         cout <<" mahemdavadi riddhi j , 220130318035";
+        cout << "Object destroyed." << endl;
+    }
+};
+
+int main() {
+    MessagePrinter obj1;
+    {
+        MessagePrinter obj2;
+    } // obj2 goes out of scope and gets destroyed
+    MessagePrinter obj3;
+
+    return 0;
+}
