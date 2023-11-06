@@ -1,0 +1,40 @@
+Write a C++ program to demonstrate use of copy constructor.
+#include <iostream>
+
+using namespace std;
+
+class MyClass {
+private:
+    int value;
+
+public:
+    // Parameterized constructor
+    MyClass(int val) {
+        value = val;
+    }
+
+    // Copy constructor
+    MyClass(const MyClass &other) {
+        value = other.value; // Initialize 'value' by copying from another object
+    }
+
+    void displayValue() {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main() {
+    MyClass originalObject(42);
+
+    // Create a new object using the copy constructor
+    MyClass copyObject = originalObject;
+
+    cout << "Original Object: ";
+    originalObject.displayValue();
+
+    cout << "Copy Object: ";
+    copyObject.displayValue();
+
+    return 0;
+}
+
