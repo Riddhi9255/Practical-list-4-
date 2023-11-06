@@ -1,0 +1,35 @@
+Write a C++ program to calculate addition of two numbers using 
+Friend function.
+#include <iostream>
+
+using namespace std;
+
+class Calculator;  // Forward declaration of the friend class
+
+class Number {
+private:
+    int num;
+
+public:
+    Number(int n) : num(n) {}
+
+    // Declare the friend function
+    friend int addNumbers(const Number& num1, const Number& num2);
+};
+
+// Define the friend function to add two numbers
+int addNumbers(const Number& num1, const Number& num2) {
+    return num1.num + num2.num;
+}
+
+int main() {
+    Number number1(5);
+    Number number2(7);
+
+    // Call the friend function to add the numbers
+    int result = addNumbers(number1, number2);
+
+    cout << "The addition of " << number1.num << " and " << number2.num << " is: " << result << endl;
+
+    return 0;
+}
