@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+class FriendClass;  // Forward declaration of the friend class
+
+class MyClass {
+private:
+    int privateData;
+
+public:
+    MyClass(int data) : privateData(data) {}
+
+    // Declare the friend class
+    friend class FriendClass;
+};
+
+class FriendClass {
+public:
+    void accessPrivateData(const MyClass& obj) {
+        cout << "Accessing private data from MyClass: " << obj.privateData << endl;
+    }
+};
+
+int main() {
+    MyClass myObj(42);
+    FriendClass friendObj;
+
+    // Call the friend class function to access private data
+    friendObj.accessPrivateData(myObj);
+
+    return 0;
+}
